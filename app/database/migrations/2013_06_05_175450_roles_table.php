@@ -11,7 +11,10 @@ class RolesTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		Schema::create('roles', function($t) {
+                        $t->increments('id');
+                        $t->string('name', 40)->unique();
+                });
 	}
 
 	/**
@@ -21,7 +24,7 @@ class RolesTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('roles');
 	}
 
 }
